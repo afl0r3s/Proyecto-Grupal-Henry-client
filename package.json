@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://afl0r3s/Proyecto-Grupal-Henry-client/",
+  "homepage": "https://afl0r3s.github.io/Proyecto-Grupal-Henry-client/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
