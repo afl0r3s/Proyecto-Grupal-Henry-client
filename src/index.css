@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*Form */
+.form {
+  max-width: 40em;
+  margin: 0 auto;
+  text-align: left;
+  overflow: hidden;
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4em;
+}
+
+.form label {
+  margin:  1em 0;
+  display: block;
+}
+
+.form input, button {
+  padding: 1em;
+  border-radius: 1em;
+  outline: none;
+}
+.form button:hover {
+  background: chocolate;
+  border-radius: 1em;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12em;
+  padding: 0.4em;
+  z-index: 1;
+  background-color: chocolate;
+  margin: 0;
+  margin-top: 0.4em;
+  border-radius: 0.5em;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.danger {
+  color: red;
+  margin-left: 1em;
+}

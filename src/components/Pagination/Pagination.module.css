@@ -1,0 +1,17 @@
+.pagination_nav {
+  text-align: center;
+}
+
+.pagination_nav ul {
+  list-style: none;
+}
+
+.pagination_nav li {
+  text-align: left;
+  display: inline-block;
+  margin: 5px;
+}
+
+.pagination_nav button:hover {
+  cursor: pointer;
+}
