@@ -1,6 +1,6 @@
 import axios from "axios";
 import types from "../constants/types";
-const BASE_URL = "http://localhost:3001";
+//const BASE_URL = "http://localhost:3001";
 
 // http://localhost:3001/products GET
 // http://localhost:3001/products?name=... GET
