@@ -24,7 +24,18 @@ function App() {
 			<div className="App">
 				<Switch>
 					<Route exact path="/" component={Home} />
-
+					<Route exact path="/detail/:id" component={Detail} />
+					<Route exact path="/shop" component={Shop} />
+					<Route exact path="/cart" component={Cart} />
+					<Route exact path="/checkout" component={Checkout} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/help" component={Help} />
+					<Route exact path="/login" component={SignIn} />
+					<Route exact path="/signup" component={SignUp} />
+					<Route exact path="/company" component={Company} />
+					<Route exact path="/team" component={Team} />
+					<Route exact path="/our" component={Our} />
+					<Route path="*" component={Error404} />
 				</Switch>
 			</div>
 		</HashRouter>
