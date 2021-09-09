@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Proyecto-Grupal-Henry-client/static/css/main.92d8368c.chunk.css",
-    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.736622e0.chunk.js",
-    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.736622e0.chunk.js.map",
-    "runtime-main.js": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.15369a90.js",
-    "runtime-main.js.map": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.15369a90.js.map",
-    "static/js/2.ca8f220f.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/2.ca8f220f.chunk.js",
-    "static/js/2.ca8f220f.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/2.ca8f220f.chunk.js.map",
-    "static/js/3.7651a01f.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/3.7651a01f.chunk.js",
-    "static/js/3.7651a01f.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/3.7651a01f.chunk.js.map",
+    "main.css": "/Proyecto-Grupal-Henry-client/static/css/main.09298dc2.chunk.css",
+    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.5ac5c268.chunk.js",
+    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.5ac5c268.chunk.js.map",
+    "runtime-main.js": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.ee581ab9.js",
+    "runtime-main.js.map": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.ee581ab9.js.map",
+    "static/js/2.603fdfa6.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js",
+    "static/js/2.603fdfa6.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js.map",
+    "static/js/3.bfa07a33.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/3.bfa07a33.chunk.js",
+    "static/js/3.bfa07a33.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/3.bfa07a33.chunk.js.map",
     "index.html": "/Proyecto-Grupal-Henry-client/index.html",
-    "static/css/main.92d8368c.chunk.css.map": "/Proyecto-Grupal-Henry-client/static/css/main.92d8368c.chunk.css.map",
-    "static/js/2.ca8f220f.chunk.js.LICENSE.txt": "/Proyecto-Grupal-Henry-client/static/js/2.ca8f220f.chunk.js.LICENSE.txt",
+    "static/css/main.09298dc2.chunk.css.map": "/Proyecto-Grupal-Henry-client/static/css/main.09298dc2.chunk.css.map",
+    "static/js/2.603fdfa6.chunk.js.LICENSE.txt": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js.LICENSE.txt",
     "static/media/LogoEstiloPropio.592f67cc.png": "/Proyecto-Grupal-Henry-client/static/media/LogoEstiloPropio.592f67cc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.15369a90.js",
-    "static/js/2.ca8f220f.chunk.js",
-    "static/css/main.92d8368c.chunk.css",
-    "static/js/main.736622e0.chunk.js"
+    "static/js/runtime-main.ee581ab9.js",
+    "static/js/2.603fdfa6.chunk.js",
+    "static/css/main.09298dc2.chunk.css",
+    "static/js/main.5ac5c268.chunk.js"
   ]
 }
