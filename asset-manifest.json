@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Proyecto-Grupal-Henry-client/static/css/main.92d8368c.chunk.css",
-    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.fbbe2141.chunk.js",
-    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.fbbe2141.chunk.js.map",
+    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.1edb46cc.chunk.js",
+    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.1edb46cc.chunk.js.map",
     "runtime-main.js": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.15369a90.js",
     "runtime-main.js.map": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.15369a90.js.map",
     "static/js/2.575495a8.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/2.575495a8.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.15369a90.js",
     "static/js/2.575495a8.chunk.js",
     "static/css/main.92d8368c.chunk.css",
-    "static/js/main.fbbe2141.chunk.js"
+    "static/js/main.1edb46cc.chunk.js"
   ]
 }
