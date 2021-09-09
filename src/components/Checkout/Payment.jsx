@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { Snackbar } from "@material-ui/core";
 import { useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import {
   Elements,
   CardElement,
@@ -104,13 +104,13 @@ useEffect(()=>{
   const script = document.createElement('script');
 
   const attr_data_preference = document.createAttribute('data-preference-id')//crea un nodo atributo
-  attr_data_preference.value = data.id //le asigna como valor el id que devuelve MP
+  attr_data_preference.value = datos.id //le asigna como valor el id que devuelve MP
 
   //Agrega atributos al elemento script
   script.src="https://www.mercadopago.com.ar/integratios/v1/web-payment-checkout.js";
   script.setAttribute(attr_data_preference)
 
-  console.log(data)
+  console.log(datos)
 
   //Agrega el script como nodo hijo del elemento form
   document.getElementById('form1').appendChild(script)
@@ -119,7 +119,7 @@ useEffect(()=>{
     document.getElementById('form1').removeChild(script)
   }
 
-},[data])
+},[datos])
 
 
 
