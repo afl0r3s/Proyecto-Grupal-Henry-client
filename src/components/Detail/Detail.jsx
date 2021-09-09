@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { getProductsById, addToCart } from "../../redux/actions";
+import { getProductsById } from "../../redux/actions";
 import NavBar from "../NavBar/NavBar";
 import BeatLoader from "react-spinners/BeatLoader";
 import detStyle from "./Detail.module.css";
@@ -12,12 +13,26 @@ export default function Detail() {
   var productDetail = useSelector((state) => state.productDetails);
   var productId = location.pathname.split("/").pop();
 
+  const [cart, setCart] = useLocalStorage("cart", {
+    productsList: [],
+    totalPrice: 0,
+  });
+
   useEffect(() => {
     dispatch(getProductsById(productId));
   }, [dispatch, productId]);
 
-  const handleAddClick = (id) => {
-    dispatch(addToCart(id));
+  const handleAddProduct = () => {
+    if (
+      productDetail &&
+      !cart.productsList.find((elem) => elem._id === productDetail._id)
+    ) {
+      productDetail.quantity = 1;
+      setCart({
+        ...cart,
+        productsList: [...cart.productsList, productDetail],
+      });
+    }
   };
 
   return (
@@ -35,17 +50,17 @@ export default function Detail() {
               <div className={detStyle.data2}>⭐️⭐️⭐️⭐️</div>
               <div className={detStyle.data3}>$ {productDetail.price}</div>
               <div className={detStyle.data4}>
-                <b>Product Description: </b>
+                <b>Descripción del producto: </b>
                 <br />
                 {productDetail.description}
               </div>
               <div className={detStyle.data5}>
                 <button
                   className={detStyle.button1}
-                  onClick={() => handleAddClick(productDetail._id)}
+                  onClick={() => handleAddProduct()}
                 >
                   {" "}
-                  Add Cart 🛒{" "}
+                  Agregar al carrito 🛒{" "}
                 </button>
               </div>
             </div>

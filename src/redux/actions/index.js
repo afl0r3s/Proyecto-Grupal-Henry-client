@@ -110,47 +110,11 @@ export const addCategory = (category) => {
   };
 };
 
-// Cart
-export const addToCart = (id) => {
-  return {
-    type: types.CART_ADD_PRODUCT,
-    payload: id,
-  };
-};
-
-export const removeFromCart = (id) => {
-  return {
-    type: types.CART_REMOVE_PRODUCT,
-    payload: id,
-  };
-};
-
-export const removeAll = () => {
-  return {
-    type: types.CART_REMOVE_ALL,
-  };
-};
-
-export const updateQuantity = (payload) => {
-  return {
-    type: types.UPDATE_QUANTITY,
-    payload,
-  };
-};
-
-export const updateTotalPrice = (payload) => {
-  return {
-    type: types.UPDATE_TOTAL_PRICE,
-    payload,
-  };
-};
-
 // Filter
-// No se me ocurre como solucionar el problema q surge al elegir todas las categorias
 export const filterByCategory = (id) => (dispatch) => {
   return dispatch({
     type: types.FILTER_BY_CATEGORY,
-    payload: id
+    payload: id,
   });
 };
 

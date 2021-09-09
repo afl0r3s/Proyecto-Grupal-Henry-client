@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Link } from "react-router-dom";
-import * as actions from "../../redux/actions/index";
+import utils from "../../redux/utils/index";
 import BeatLoader from "react-spinners/BeatLoader";
 import {
   Container,
@@ -14,16 +14,48 @@ import {
 } from "@material-ui/core";
 
 const Cart = () => {
-  const dispatch = useDispatch();
+  const [cart, setCart] = useLocalStorage("cart", {
+    productsList: [],
+    totalPrice: 0,
+  });
 
-  const stateListProducts = useSelector((state) => state.cart.listProducts);
-  console.log(stateListProducts);
+  const totalPrice = cart
+    ? cart.productsList.reduce((acc, cur) => {
+        acc += cur.price * cur.quantity;
+        return utils.roundNumber(acc);
+      }, 0)
+    : 0;
 
-  const totalPrice = stateListProducts?.reduce((acc, product) => {
-    return (acc += product.quantity * product.price);
-  }, 0);
+  const handleUpdateQuantity = (option) => {
+    setCart({
+      ...cart,
+      productsList: utils.updateQuantity(cart.productsList, option),
+    });
+  };
 
-  const listProducts = stateListProducts?.map((elem, idx) => (
+  const handleRemoveProduct = (id) => {
+    setCart({
+      ...cart,
+      productsList: cart.productsList.filter((elem) => elem._id !== id),
+      totalPrice: totalPrice,
+    });
+  };
+
+  const handleRemoveAll = () => {
+    setCart({
+      productsList: [],
+      totalPrice: 0,
+    });
+  };
+
+  const handleCheckout = () => {
+    setCart({
+      ...cart,
+      totalPrice: totalPrice,
+    });
+  };
+
+  const listProducts = cart.productsList.map((elem, idx) => (
     <Card key={idx} style={{ margin: 20, padding: 20 }} variant="outlined">
       <CardContent>
         <img src={elem.image_url} alt={elem.name} width="200" height="200" />
@@ -31,23 +63,19 @@ const Cart = () => {
           {elem.name}
         </Typography>
         <Typography variant="body2">
-          Precio: $ {elem.price * elem.quantity}
+          Precio: $ {utils.roundNumber(elem.price * elem.quantity)}
         </Typography>
         <Typography>Cantidad: {elem.quantity}</Typography>
         <ButtonGroup disableElevation variant="contained">
           <Button
             color="primary"
-            onClick={() =>
-              dispatch(actions.updateQuantity({ id: elem._id, value: "min" }))
-            }
+            onClick={() => handleUpdateQuantity({ id: elem._id, value: "min" })}
           >
             -
           </Button>
           <Button
             color="primary"
-            onClick={() =>
-              dispatch(actions.updateQuantity({ id: elem._id, value: "max" }))
-            }
+            onClick={() => handleUpdateQuantity({ id: elem._id, value: "max" })}
           >
             +
           </Button>
@@ -56,7 +84,7 @@ const Cart = () => {
       <Button
         variant="contained"
         color="secondary"
-        onClick={() => dispatch(actions.removeFromCart(elem._id))}
+        onClick={() => handleRemoveProduct(elem._id)}
       >
         Remove
       </Button>
@@ -66,13 +94,18 @@ const Cart = () => {
   if (!listProducts) {
     return <BeatLoader />;
   }
+
   if (!listProducts.length) {
     return (
       <Container style={{ margin: 50 }}>
-        <Typography>Cart is empty. Go to the shop and add products</Typography>
+        <Typography variant="h4">
+          <b>Tu carrito está vacío.</b>
+          <br />
+          Vuelve a la tienda y agrega los productos que desees comprar.
+        </Typography>
         <Link to="/">
           <Button style={{ margin: 50 }} variant="contained" color="secondary">
-            SHOP
+            VOLVER A LA TIENDA
           </Button>
         </Link>
       </Container>
@@ -92,9 +125,9 @@ const Cart = () => {
           variant="contained"
           style={{ margin: 30 }}
           color="primary"
-          onClick={() => dispatch(actions.removeAll())}
+          onClick={() => handleRemoveAll()}
         >
-          REMOVE ALL
+          VACIAR CARRITO
         </Button>
         {listProducts}
         <Grid item>
@@ -104,9 +137,9 @@ const Cart = () => {
                 variant="contained"
                 style={{ margin: 30 }}
                 color="primary"
-                onClick={() => dispatch(actions.updateTotalPrice(totalPrice))}
+                onClick={() => handleCheckout()}
               >
-                CHECKOUT
+                COMPRAR
               </Button>
             </Link>
           )}
