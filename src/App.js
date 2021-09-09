@@ -23,8 +23,8 @@ function App() {
 	<BrowserRouter>
     <div className="App">
     <Switch>
-    <Route exact path='/Proyecto-Grupal-Henry-client/'           component = {Home}/>
-    <Route exact path='/Proyecto-Grupal-Henry-client/detail/:id' component = {Detail}/>
+    <Route exact path='/'           component = {Home}/>
+    <Route exact path='/detail/:id' component = {Detail}/>
     <Route exact path='/shop'       component = {Shop}/>
     <Route exact path='/cart'       component = {Cart}/>
     <Route exact path='/checkout'   component = {Checkout}/>
