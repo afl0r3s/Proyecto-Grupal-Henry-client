@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { deleteCategory, getCategories } from '../../../redux/actions/index';
 import AdmNav from '../AdmNav';
+import { NavLink } from 'react-router-dom';
 import ctgStyle from './CreateCategory.module.css';
 
 //import { DataGrid } from '@material-ui/data-grid';
@@ -35,7 +36,7 @@ export default function AddCategories() {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getCategories());
-	  }, [dispatch]);
+	  }, [dispatch,categoriesArr]);
 
 	const history = useHistory();
 
@@ -54,14 +55,16 @@ export default function AddCategories() {
 		<AdmNav />
  		<div className={ctgStyle.Catcontent}>
             {/* <button className={ctgStyle.myButton} type="submit">Crear Categoria</button> */}
+			<NavLink to="/admin/adminpanel/categoriesCreate" >
             <Button 
                 variant="contained" 
                 color="primary"
                 size="medium"
-                href="/admin/adminpanel/categoriesCreate"
+                //href="/admin/adminpanel/categoriesCreate"
                 style={{marginTop: '10px'}}
                 disableElevation
                 > Crear Categoria </Button>
+			</NavLink>
 		</div>
 		
 {/* 		<div style={{ height: 400, width: '100%' }}>
