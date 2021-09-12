@@ -17,6 +17,11 @@ import Team from './components/Team/Team';
 import Our from './components/Our/Our';
 import SignIn from './components/Login/SignIn';
 import SignUp from './components/Register/SignUp';
+import Admin from './components/AdminPanel/Admin';
+import Categories from './components/AdminPanel/Categories/Categories';
+import CreateCategory from './components/AdminPanel/Categories/CreateCategory';
+import UpdateCategory from './components/AdminPanel/Categories/UpdateCategory';
+import CreateProduct from './components/CreateProduct/CreateProduct';
 
 function App() {
 	return (
@@ -35,6 +40,14 @@ function App() {
 					<Route exact path="/company" component={Company} />
 					<Route exact path="/team" component={Team} />
 					<Route exact path="/our" component={Our} />
+
+					{/* --- Panel del Administrador  */}
+					<Route exact path="/admin/adminpanel" component={Admin} />
+					<Route exact path="/admin/adminpanel/categories" component={Categories} />
+					<Route exact path="/admin/adminpanel/categoriesCreate" component={CreateCategory} />
+					<Route exact path="/admin/adminpanel/categoriesUpdate/:id" component={UpdateCategory} />
+					<Route exact path="/admin/prdcreate" component={CreateProduct} />
+					{/* --- Fin: Panel del Administrador  */}
 					<Route path="*" component={Error404} />
 				</Switch>
 			</div>

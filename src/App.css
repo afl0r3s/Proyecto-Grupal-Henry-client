@@ -15,6 +15,8 @@ body{
 
 .App {
   text-align: center;
+  background-color: teal;
+  width: 98vw;
 }
 
 .App-logo {

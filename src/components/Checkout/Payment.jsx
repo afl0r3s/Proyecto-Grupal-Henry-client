@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { Snackbar } from "@material-ui/core";
 import { useState } from "react";
-//import axios from "axios";
+import axios from "axios";
 import {
   Elements,
   CardElement,
   ElementsConsumer,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
+
 
 const stripePromise = loadStripe('pk_test_Dt4ZBItXSZT1EzmOd8yCxonL');
 
