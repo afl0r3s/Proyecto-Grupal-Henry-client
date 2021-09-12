@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/Proyecto-Grupal-Henry-client/static/css/main.09298dc2.chunk.css",
-    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.5ac5c268.chunk.js",
-    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.5ac5c268.chunk.js.map",
-    "runtime-main.js": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.ee581ab9.js",
-    "runtime-main.js.map": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.ee581ab9.js.map",
-    "static/js/2.603fdfa6.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js",
-    "static/js/2.603fdfa6.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js.map",
-    "static/js/3.bfa07a33.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/3.bfa07a33.chunk.js",
-    "static/js/3.bfa07a33.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/3.bfa07a33.chunk.js.map",
+    "main.css": "/Proyecto-Grupal-Henry-client/static/css/main.84f1b4cb.chunk.css",
+    "main.js": "/Proyecto-Grupal-Henry-client/static/js/main.6b2fd637.chunk.js",
+    "main.js.map": "/Proyecto-Grupal-Henry-client/static/js/main.6b2fd637.chunk.js.map",
+    "runtime-main.js": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.3c76dc8e.js",
+    "runtime-main.js.map": "/Proyecto-Grupal-Henry-client/static/js/runtime-main.3c76dc8e.js.map",
+    "static/css/2.d964bb24.chunk.css": "/Proyecto-Grupal-Henry-client/static/css/2.d964bb24.chunk.css",
+    "static/js/2.962965ae.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/2.962965ae.chunk.js",
+    "static/js/2.962965ae.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/2.962965ae.chunk.js.map",
+    "static/js/3.e15a5e85.chunk.js": "/Proyecto-Grupal-Henry-client/static/js/3.e15a5e85.chunk.js",
+    "static/js/3.e15a5e85.chunk.js.map": "/Proyecto-Grupal-Henry-client/static/js/3.e15a5e85.chunk.js.map",
     "index.html": "/Proyecto-Grupal-Henry-client/index.html",
-    "static/css/main.09298dc2.chunk.css.map": "/Proyecto-Grupal-Henry-client/static/css/main.09298dc2.chunk.css.map",
-    "static/js/2.603fdfa6.chunk.js.LICENSE.txt": "/Proyecto-Grupal-Henry-client/static/js/2.603fdfa6.chunk.js.LICENSE.txt",
+    "static/css/2.d964bb24.chunk.css.map": "/Proyecto-Grupal-Henry-client/static/css/2.d964bb24.chunk.css.map",
+    "static/css/main.84f1b4cb.chunk.css.map": "/Proyecto-Grupal-Henry-client/static/css/main.84f1b4cb.chunk.css.map",
+    "static/js/2.962965ae.chunk.js.LICENSE.txt": "/Proyecto-Grupal-Henry-client/static/js/2.962965ae.chunk.js.LICENSE.txt",
     "static/media/LogoEstiloPropio.592f67cc.png": "/Proyecto-Grupal-Henry-client/static/media/LogoEstiloPropio.592f67cc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ee581ab9.js",
-    "static/js/2.603fdfa6.chunk.js",
-    "static/css/main.09298dc2.chunk.css",
-    "static/js/main.5ac5c268.chunk.js"
+    "static/js/runtime-main.3c76dc8e.js",
+    "static/css/2.d964bb24.chunk.css",
+    "static/js/2.962965ae.chunk.js",
+    "static/css/main.84f1b4cb.chunk.css",
+    "static/js/main.6b2fd637.chunk.js"
   ]
 }
