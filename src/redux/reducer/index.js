@@ -11,6 +11,9 @@ const initialState = {
   productDetails: [],
   categories: [],
   categoryDetails: [],
+  user: {
+    cart: [],
+  },
   loading: false,
   dataState: "all",
   userInfo: localStorage.getItem("userInfo")
@@ -53,20 +56,30 @@ const rootReducer = (state = initialState, action) => {
         ...state,
       };
 
+    case types.UPDATE_PRODUCT:
+      return {
+        ...state,
+      };
+
+    case types.DELETE_PRODUCT:
+      return {
+        ...state,
+      };
+
     case types.POST_CATEGORY:
       return {
         ...state,
       };
 
     case types.DELETE_CATEGORY:
-        return {
-          ...state,
-        };
+      return {
+        ...state,
+      };
 
     case types.UPDATE_CATEGORY:
-          return {
-            ...state,
-          };
+      return {
+        ...state,
+      };
 
     case types.GET_CATEGORIES:
       return {
@@ -117,6 +130,15 @@ const rootReducer = (state = initialState, action) => {
         },
       };
 
+    case types.GET_CART_FROM_USER:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          cart: action.payload,
+        },
+      };
+
     // eslint-disable-next-line no-fallthrough
     case userTypes.USER_SIGNIN_REQUEST:
       return {
@@ -162,6 +184,21 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         signupError: action.payload,
+      };
+
+    case types.SEND_HELP_EMAIL:
+      return {
+        ...state,
+      };
+
+    case types.SEND_REGISTER_EMAIL:
+      return {
+        ...state,
+      };
+
+    case types.SEND_PAYMENT_EMAIL:
+      return {
+        ...state,
       };
 
     default:

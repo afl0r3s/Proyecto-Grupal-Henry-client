@@ -8,7 +8,7 @@ import { BsCardChecklist, BsArchiveFill, BsFilePost, BsFillPeopleFill } from "re
 
 
 export default function AdminPanel() {
-    const AdminUrl = "/admin/adminpanel";
+    //const AdminUrl = "/admin/adminpanel";
     
     return (
         <div className={admStyle.main}>
@@ -16,11 +16,12 @@ export default function AdminPanel() {
 
             <div className={admStyle.contentGroup}>
             <div className={admStyle.contentBtn}>
-            <NavLink to="/admin/adminpanel/categories" >
+            <NavLink to="/admin/adminpanel/categories"  >
             <Button 
                 variant="contained" 
                 color="secondary"
                 size="large"
+                className={admStyle.btnMenu}
                 disableElevation
                 >
             {/* <IconButton>
@@ -36,6 +37,7 @@ export default function AdminPanel() {
                 variant="contained" 
                 color="secondary"
                 size="large"
+                className={admStyle.btnMenu}
                 //href={AdminUrl+"/products"}
                 disableElevation
                 ><BsArchiveFill size="1.5em" /> &nbsp; Productos</Button>
@@ -46,6 +48,7 @@ export default function AdminPanel() {
                 variant="contained" 
                 color="secondary"
                 size="large"
+                className={admStyle.btnMenu}
                 //href={AdminUrl+"/orders"}
                 disableElevation
                 ><BsFilePost size="1.5em" /> &nbsp; Ordenes</Button>
@@ -56,6 +59,7 @@ export default function AdminPanel() {
                 variant="contained" 
                 color="secondary"
                 size="large"
+                className={admStyle.btnMenu}
                 //href={AdminUrl+"/users"}
                 disableElevation
                 ><BsFillPeopleFill size="1.5em" /> &nbsp; Usuarios</Button>

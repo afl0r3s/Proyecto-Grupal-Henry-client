@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { getProductsById } from "../../redux/actions";
 import NavBar from "../NavBar/NavBar";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -10,8 +10,12 @@ import detStyle from "./Detail.module.css";
 export default function Detail() {
   const dispatch = useDispatch();
   const location = useLocation();
-  var productDetail = useSelector((state) => state.productDetails);
-  var productId = location.pathname.split("/").pop();
+  const history = useHistory();
+
+  // const userInfo = useSelector((state) => state.userInfo);
+  // const order = useSelector((state) => state.order.detail);
+  const productDetail = useSelector((state) => state.productDetails);
+  const productId = location.pathname.split("/").pop();
 
   const [cart, setCart] = useLocalStorage("cart", {
     productsList: [],
@@ -21,6 +25,13 @@ export default function Detail() {
   useEffect(() => {
     dispatch(getProductsById(productId));
   }, [dispatch, productId]);
+
+  // If user is logged
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     dispatch(getOrderByUserId(userInfo._id));
+  //   }
+  // }, [dispatch, userInfo]);
 
   const handleAddProduct = () => {
     if (
@@ -33,6 +44,7 @@ export default function Detail() {
         productsList: [...cart.productsList, productDetail],
       });
     }
+    history.push("/cart");
   };
 
   return (

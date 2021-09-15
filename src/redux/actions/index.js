@@ -1,4 +1,3 @@
-import { Category } from "@material-ui/icons";
 import axios from "axios";
 import types from "../constants/types";
 //const BASE_URL = "http://localhost:3001";
@@ -65,6 +64,32 @@ export const addProduct = (product) => {
       });
     } catch (err) {
       console.log(err);
+    }
+  };
+};
+
+export const updateProduct = (product) => {
+  return async (dispatch) => {
+    try {
+      await axios.put(`/products/update/`, product);
+      return dispatch({
+        type: types.UPDATE_PRODUCT,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const deleteProduct = (productID) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`/products/delete/${productID}`);
+      return dispatch({
+        type: types.DELETE_PRODUCT,
+      });
+    } catch (error) {
+      console.log(error);
     }
   };
 };
@@ -159,3 +184,79 @@ export const orderByRangePrice = (payload) => {
     payload,
   };
 };
+
+// Email
+export const sendHelpEmail = (email) => {
+  // correo de sugerencias o consultas
+  return async (dispatch) => {
+    try {
+      await axios.post(`/email/sendHelpEmail`, email);
+      return dispatch({
+        type: types.SEND_HELP_EMAIL, // va de ellos a nosotros
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const sendRegisterEmail = (email) => {
+  // correo de confirmacion de registro
+  return async (dispatch) => {
+    try {
+      await axios.post(`/email/sendRegisterEmail`, email);
+      return dispatch({
+        type: types.SEND_REGISTER_EMAIL, // va de nosotros a ellos
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const sendPaymentEmail = (email) => {
+  // correo de confirmación de la compra
+  return async (dispatch) => {
+    try {
+      await axios.post(`/email/sendPaymentEmail`, email);
+      return dispatch({
+        type: types.SEND_PAYMENT_EMAIL, // va de nosotros a ellos
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// User Orders
+export const getCartFromUser = (user_id) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`/user/${user_id}`);
+      const userCart = data.cart;
+      return dispatch({
+        type: types.GET_CART_FROM_USER,
+        payload: userCart,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const updateOrder = (user_id, cart) => {
+  return async (dispatch) => {
+    try {
+      await axios.put(`/updateCart/${user_id}`, cart);
+      return dispatch({ type: types.UPDATE_ORDER });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// Si el usuario no está registrado no se debería crear la orden.
+
+// Si el usuario se loguea, primero se tiene que buscar si existe una orden en "created".
+// Si existe order, le sumamos a esa order todos los productos que tenga en el localStorage.
+// Si no existe order, le creamos una con todos los productos que agregó al carrito (del localStorage).

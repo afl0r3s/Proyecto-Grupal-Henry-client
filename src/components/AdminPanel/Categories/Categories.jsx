@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { deleteCategory, getCategories } from '../../../redux/actions/index';
 import AdmNav from '../AdmNav';
-import { NavLink } from 'react-router-dom';
 import ctgStyle from './CreateCategory.module.css';
 
 //import { DataGrid } from '@material-ui/data-grid';
@@ -60,7 +59,6 @@ export default function AddCategories() {
                 variant="contained" 
                 color="primary"
                 size="medium"
-                //href="/admin/adminpanel/categoriesCreate"
                 style={{marginTop: '10px'}}
                 disableElevation
                 > Crear Categoria </Button>
