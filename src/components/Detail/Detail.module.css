@@ -1,8 +1,12 @@
+
+
 .padre {
+	margin: auto;
 	margin-top: 15px;
 	display: flex;
 	justify-content: center;
-}
+	width: 80%;
+	}
 
 .content {
 	text-align: center;
@@ -12,6 +16,8 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	background-color: white;
+	width: 85%;
+	
 }
 
 .info1 {
@@ -112,3 +118,33 @@
 	justify-content: start;
 	/* align-items: center; */
 }
+
+@media (max-width: 1200px){
+
+	.content {
+		width: 90%;
+		
+	}
+	}
+
+@media (max-width: 800px){
+.content {
+	grid-template-columns: auto;
+	
+}
+.NFcontent {
+	grid-template-columns: auto;
+}
+
+}
+
+@media (max-width: 600px){
+	.content {
+		width: 100%;
+		
+	}
+	.padre {
+		width: 100%;
+		
+	}
+	}

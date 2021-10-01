@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
+import theme from './temaConfig';
 import store from './redux/store';
 import axios from "axios";
 import dotenv from "dotenv";
@@ -13,9 +15,11 @@ axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 ReactDOM.render(
 	<Provider store={store}>
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>
+		<ThemeProvider theme={theme}>
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		</ThemeProvider>
 	</Provider>,
 	document.getElementById('root'),
 );

@@ -2,22 +2,25 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 80px;
+    height: 140px;
     justify-content: space-between;
     align-items: center;
-    background-color: #EEE4D0;
+    background-color: #eed0d0;
 }
 
 .container > img{
-    width: 60px;
-    height: 60px;
-    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    margin-left: 40px;
 }
 
 .select{
     background-color: #EEE4D0;
     border: 0px;
     opacity: 0.8;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .select:hover{
@@ -27,13 +30,16 @@
 .container_links{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .link_text{
     color: black;
     text-decoration: none;
-    padding: 15px;
-    opacity: 0.8;
+    padding: 10px;
+    opacity: 0.6;
+    font-weight: bold;
+    font-size: 15px;
 }
 .link_text:hover{
     opacity: 1;
@@ -42,7 +48,8 @@
 .link_cart{
 
     margin-left: 10px;
-    margin-right: 10px
+    margin-right: 10px;
+    
 
 }
 
@@ -50,24 +57,45 @@
     display: flex;
     align-items: center;
     width: 100px;
-    height: 20px;
+    height: 40px;
     text-align: center;
     text-decoration: none;
     font-weight: 80;
-    font-size: 12px;
+    font-size: 15px;
     color: #ffffff;
     background-color: #CFA67C;
     border-radius: 6px;
     border: 1px solid #A05D31;
     opacity: 0.8;
     margin: auto;
+    justify-content: center;
 }
   
   .boton:hover{
     opacity: 1;
   }
 
+  .boton > span {
+    padding-right: 5px;
+    align-items: center;
+  }
+
+  .filtros{
+      font-size: 10px;
+      margin: 20px
+  }
+
+  .filtros > label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
 @media (max-width: 900px) {
+    .container > img{
+        margin-left: 10px;
+        width: 60px;
+        height: 60px;
+     }
     .container_links{
         flex-direction: column;
     }
@@ -75,22 +103,32 @@
        margin-left: 10px;
     }
     .link_text{
-        font-size: 10px;
-        padding: 3px;
+        font-size: 8px;
+        padding: 2px;
     }
-    .filtros{
-        margin: 0%;
-    }
+ 
+
 
     .select{
      font-size: 9px;
+     margin-top: 10px;
     }
 
     @media (max-width: 600px){
+        .container > img{
+            margin-left: 10px;
+      
+         }
+        .filtros > label{
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
         .searchBar{
         flex-direction: column;
         margin-left: 5px;
         margin-right: 5px;
+        height: 50px;
     }
       
       .boton{
@@ -101,6 +139,13 @@
        
       }
       
+      .select{
+        margin-top: 5px;
+       }
       }
+
+      .filtros{
+       margin: 10px
+    }
   }
   

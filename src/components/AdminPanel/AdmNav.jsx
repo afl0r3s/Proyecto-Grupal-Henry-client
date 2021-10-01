@@ -1,8 +1,18 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, makeStyles, Button } from '@material-ui/core'
-import { NavLink } from 'react-router-dom';
-import { withThemeCreator } from '@material-ui/styles'
-//import MenuIcon  from '@material-ui/icons/Menu'
+import { 
+    AppBar, 
+    Toolbar, 
+    Typography, 
+    makeStyles, 
+    Button } from '@material-ui/core'
+import {BsHouseDoorFill } from 'react-icons/bs';
+import {GoSignOut } from 'react-icons/go';
+import { NavLink, Link } from 'react-router-dom';
+import firebase    from "firebase";
+import admStyle from './Admin.module.css';
+import { useDispatch } from 'react-redux';
+import { signout }     from "../../redux/actions/userActions";
+
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
@@ -17,28 +27,35 @@ const useStyles = makeStyles(theme => ({
 
 export default function AdmNav() {
     const classes = useStyles()
+    const dispatch = useDispatch();
+
+    function handleSignout() {
+        firebase.auth().signOut()
+        dispatch(signout());
+      }
+
     return (
         <div>
-            <AppBar position="fixed" color="primary">
+            <AppBar position="fixed" style={{backgroundColor:" var(--color-fondo1)"}}>
               <Toolbar>
-{/*                 <IconButton>
-                    <MenuIcon 
-                        color="inherit" aria-label="menu" 
-                        className={classes.menuButton}
-                        />
-                </IconButton> */}
                 <Typography variant="h6" className={classes.tittle} >
                     Panel de Adminstrador
                 </Typography>
                 
+                <Link to="/shop" onClick={handleSignout}>
+                    <Button 
+                        variant="contained" 
+                        className={admStyle.btnNav2} 
+                        disableElevation
+                    > <GoSignOut size="1.1em" />&nbsp;Sing Out </Button>
+                </Link>
+                &nbsp;
                 <NavLink to="/admin/adminpanel" >
                     <Button 
                         variant="contained" 
-                        color="primary"
-                        size="large"
-                        //href="/admin/adminpanel"
+                        className={admStyle.btnNav} 
                         disableElevation
-                    > Home </Button>
+                    > <BsHouseDoorFill size="1.1em" /> &nbsp; Home </Button>
                 </NavLink>
               </Toolbar>
             </AppBar>

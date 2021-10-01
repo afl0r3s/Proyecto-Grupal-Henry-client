@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import styles from "./NavBar.module.css";
-import { NavLink } from "react-router-dom";
-import Logo from "../../media/LogoEstiloPropio.png";
+import SearchBar            from "../SearchBar/SearchBar";
+import styles               from "./NavBar.module.css";
+import { NavLink, Link }          from "react-router-dom";
+import Logo                 from "../../media/LogoEstiloPropio.png";
+import firebase             from "firebase";
+import { signout }          from "../../redux/actions/userActions";
+import { passwordForgot }          from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
-import firebase from "firebase"
+import * as FaIcons from 'react-icons/fa';
+import { BiUserCircle,BiHelpCircle } from "react-icons/bi";
+import { BsHouseDoorFill } from "react-icons/bs";
+import { FcAssistant } from "react-icons/fc";
+
 import {
   getCategories,
   getProducts,
@@ -12,8 +19,6 @@ import {
   orderByPrice,
   orderByRangePrice,
 } from "../../redux/actions";
-import { signout } from "../../redux/actions/userActions";
-import * as FaIcons from 'react-icons/fa';
 
 const NavBar = ({ setOrder }) => {
   const dispatch = useDispatch();
@@ -97,36 +102,46 @@ const NavBar = ({ setOrder }) => {
               className={styles.link_text}
               to="/"
               onClick={(e) => handleClick(e)}
-            >
-              Inicio
-            </NavLink>
-            <NavLink className={styles.link_text} to="/about">
-              Sobre Nosotros
-            </NavLink>
+            ><BsHouseDoorFill size="1.8em" /></NavLink>
+          {/* 
             <NavLink className={styles.link_text} to="/shop">
               Tienda
             </NavLink>
+             */}
+            <NavLink className={styles.link_text} to="/about">
+              <BiHelpCircle size="1.9em" /> 
+            </NavLink>
             <NavLink className={styles.link_text} to="/help">
-              Ayuda
+              <FcAssistant size="1.9em" alt="Ayuda"/>
             </NavLink>
             {userInfo 
               ? (<div className="dropdown">
-                <NavLink className={styles.link_text} to="#">
-                  {userInfo.name} <i className="fa fa-caret-down"></i>
-                </NavLink>
+                <Link className={styles.link_text} to="#">
+                  <BiUserCircle size="1.9em" alt="Usuario"/>
+                </Link>
                 <ul className="dropdown-content">
-                  <NavLink to="#signout" onClick={handleSignout}>
-                    Sign Out
-                  </NavLink>
+                  {userInfo.name}<br/>
+                  {/* <Link  to="/user/reset" onClick={() => dispatch(passwordForgot('sjafs.83@gmail.com'))}>
+                      Cambiar Contraseña 
+                    </Link> */}
+                  <br/>
+                  <Link className={styles.link_text} to="/admin/userpanel/orders">
+                  Ordenes <i className="fa fa-caret-down"></i>
+                </Link><br/>
+                  <Link to="/shop" onClick={handleSignout}>
+                    &#187; Sign Out &#171;
+                  </Link>
                 </ul>
+               
               </div>)
               : (<NavLink className={styles.link_text} to="/login">
-                  Logueo
+                <BiUserCircle size="1.9em" alt="Usuario"/>
                 </NavLink>)
             }
           </div>
           <NavLink className={styles.link_cart} to="/cart">
-            <button className={styles.boton}><span><FaIcons.FaCartPlus /></span> Tu Carrito</button>
+
+            <button className={styles.boton}><span><FaIcons.FaCartPlus/></span>Carrito</button>
           </NavLink>
         </div>
       </div>
